@@ -10,7 +10,7 @@ use Module::Pluggable
 use base qw( Class::Accessor::Lvalue );
 __PACKAGE__->mk_accessors(qw( _backend _published ));
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 sub new {
     my $class = shift;
@@ -19,6 +19,8 @@ sub new {
     my $self = $class->SUPER::new;
 
     my ($backend) = $args{backend} || $self->backends;
+    $backend ||= "Net::Rendezvous::Publish::Backend::Null";
+
     eval "require $backend" or die $@;
     return unless $backend;
     $self->_backend = $backend->new
@@ -56,7 +58,7 @@ Net::Rendezvous::Publish - publish Rendezvous services
  use Net::Rendezvous::Publish;
  my $publisher = Net::Rendezvous::Publish->new
    or die "couldn't make a Responder object";
- my $sevice = $publisher->publish(
+ my $service = $publisher->publish(
      name => "My HTTP Server",
      type => '_http._tcp',
      port => 12345,
@@ -115,7 +117,7 @@ Richard Clamp <richardc@unixbeard.net>
 
 =head1 COPYRIGHT
 
-Copyright 2004, Richard Clamp.  All Rights Reserved.
+Copyright 2004, 2005, Richard Clamp.  All Rights Reserved.
 
 This program is free software; you can redistribute it
 and/or modify it under the same terms as Perl itself.

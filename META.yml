@@ -1,6 +1,6 @@
---- #YAML:1.0
+---
 name: Net-Rendezvous-Publish
-version: 0.01
+version: 0.02
 author:
   - Richard Clamp <richardc@unixbeard.net>
 abstract: publish Rendezvous services
@@ -14,7 +14,9 @@ build_requires:
 provides:
   Net::Rendezvous::Publish:
     file: lib/Net/Rendezvous/Publish.pm
-    version: 0.01
+    version: 0.02
+  Net::Rendezvous::Publish::Backend::Null:
+    file: lib/Net/Rendezvous/Publish/Backend/Null.pm
   Net::Rendezvous::Publish::Service:
     file: lib/Net/Rendezvous/Publish/Service.pm
-generated_by: Module::Build version 0.23
+generated_by: Module::Build version 0.2608

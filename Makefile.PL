@@ -2,14 +2,14 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+          'PL_FILES' => {},
+          'INSTALLDIRS' => 'site',
           'NAME' => 'Net::Rendezvous::Publish',
           'VERSION_FROM' => 'lib/Net/Rendezvous/Publish.pm',
           'PREREQ_PM' => {
                            'Test::More' => 0,
                            'Module::Pluggable' => 0,
                            'Class::Accessor::Lvalue' => 0
-                         },
-          'INSTALLDIRS' => 'site',
-          'PL_FILES' => {}
+                         }
         )
 ;
