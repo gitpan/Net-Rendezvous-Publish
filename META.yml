@@ -1,6 +1,6 @@
 ---
 name: Net-Rendezvous-Publish
-version: 0.02
+version: 0.03
 author:
   - Richard Clamp <richardc@unixbeard.net>
 abstract: publish Rendezvous services
@@ -14,7 +14,7 @@ build_requires:
 provides:
   Net::Rendezvous::Publish:
     file: lib/Net/Rendezvous/Publish.pm
-    version: 0.02
+    version: 0.03
   Net::Rendezvous::Publish::Backend::Null:
     file: lib/Net/Rendezvous/Publish/Backend/Null.pm
   Net::Rendezvous::Publish::Service:
